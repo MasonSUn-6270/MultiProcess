@@ -35,11 +35,9 @@ def normal(time_):
 def collect_data(max) -> dict:
     data = {}
     for func in [run, normal]:
-        print(func.__name__)
         data[func.__name__] = {}
         for i in range(1, max + 1, 5):
-            spend_time = func(i)
-            data[func.__name__][i] = spend_time
+            data[func.__name__][i] = func(i)
     return data
 
 
